@@ -1,0 +1,225 @@
+/* ==========================================
+   COMMON PART 1: CSS Variables & Base Reset
+   ========================================== */
+:root {
+    --primary-color: #d9534f;
+    --primary-hover: #c9302c;
+    --secondary-color: #f0ad4e;
+    --dark-color: #1a1a1a;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #e9ecef;
+    --text-color: #2b2b2b;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 2.5rem auto;
+    flex: 1;
+}
+
+/* ==========================================
+   COMMON PART 2: Header & Navigation Bar
+   ========================================== */
+header {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease-in-out;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================
+   COMMON PART 3: Main Sections, Grids & Cards
+   ========================================== */
+.info-section {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+}
+
+.info-section h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    color: var(--dark-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* ==========================================
+   FEATURE 1: Home Page Styles (Team Lead)
+   ========================================== */
+.hero {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-radius: var(--radius-md);
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ==========================================
+   COMMON PART 4: Footer Styling
+   ========================================== */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================
+   COMMON PART 5: Global Mobile Media Query
+   ========================================== */
+@media (max-width: 768px) {
+    /* Header Responsive */
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    /* Container & Sections Responsive */
+    .container {
+        width: 94%;
+        margin: 1.5rem auto;
+    }
+
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .info-section {
+        padding: 1.25rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Form & Controls Responsive */
+    .btn-submit {
+        width: 100%;
+        text-align: center;
+    }
+}
