@@ -287,3 +287,25 @@ footer {
     }
 >>>>>>> develop
 }
+/* ==========================================
+   FEATURE 3: Deals Page Styles (Member 2)
+   ========================================== */
+.deal-card {
+    border: 2px dashed var(--secondary-color);
+    background-color: #fff9f0;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.special-badge {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
