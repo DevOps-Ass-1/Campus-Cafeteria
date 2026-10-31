@@ -47,7 +47,6 @@
 }
 
 /* ==========================================
-<<<<<<< HEAD
    FEATURE 5: Feedback & Form Styles (Member 4)
    ========================================== */
 .form-group {
@@ -93,7 +92,8 @@
 
 .btn-submit:hover {
     background-color: var(--primary-hover);
-=======
+}
+/*===========================================
    COMMON PART 1: CSS Variables & Base Reset
    ========================================== */
 :root {
@@ -317,7 +317,6 @@ footer {
         width: 100%;
         text-align: center;
     }
->>>>>>> develop
 }
 /* ==========================================
    FEATURE 3: Deals Page Styles (Member 2)
