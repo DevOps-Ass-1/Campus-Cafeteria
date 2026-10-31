@@ -15,6 +15,38 @@
 }
 
 /* ==========================================
+   FEATURE 4: How to Order Styles (Member 3)
+   ========================================== */
+.order-steps ol {
+    counter-reset: step-counter;
+    list-style: none;
+}
+
+.order-steps li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.order-steps li::before {
+    counter-increment: step-counter;
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* ==========================================
 <<<<<<< HEAD
    FEATURE 5: Feedback & Form Styles (Member 4)
    ========================================== */
